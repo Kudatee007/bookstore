@@ -40,3 +40,20 @@ const books = [
     image: "/images/thealchemist.png",
   },
 ];
+
+const bookContainer = document.getElementById("book-list");
+
+function displayBooks() {
+  books.forEach((book) => {
+    bookContainer.innerHTML += `
+      <div class="book">
+        <img src="${book.image}" alt="${book.title}" />
+        <h2 class"book-title">${book.title}</h2>
+        <button>Borrow Book</button>
+      </div>
+    `;
+  });
+}
+
+displayBooks();
+

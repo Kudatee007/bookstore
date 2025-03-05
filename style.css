@@ -1,0 +1,88 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+/* color */
+:root {
+  --brown-1: rgba(66, 61, 60, 100%);
+  --brown-2: #383231;
+  --brown-3: #2d2726;
+  --brown-4: #292424;
+  --brown-5: rgba(34, 30, 30, 100%);
+  --primary: #f59c5c;
+  --primary-light: #f7b687;
+  --white: #ffffff;
+  --gray: #cbc9c9;
+  --accent-light: #659477;
+  --accent: #3b8256;
+  --accent-dark: #23412f;
+  --red: #7e3e3f;
+  --burnt-orange: #875c36;
+  --teal: #377e86;
+}
+body {
+  background-color: var(--gray);
+}
+.navbar {
+  background-color: var(--white);
+  padding: 15px;
+  text-align: center;
+}
+.navbar-title {
+  border: 8px solid var(--burnt-orange);
+  width: fit-content;
+  margin: 0 auto;
+  padding: 10px 20px;
+  color: var(--brown-1);
+  font-size: 30px;
+}
+.book-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 50px;
+  padding: 150px;
+}
+.book {
+  text-align: center;
+}
+.book img {
+  width: 100%;
+  max-width: 350px;
+  height: 300px;
+  padding-bottom: 25px;
+  /* filter: blur(5px); */
+}
+.book h2 {
+  color: var(--brown-1);
+  font-size: 20px;
+  padding-bottom: 20px;
+}
+.book button {
+ width: 120px;
+ height: 35px;
+ border-radius: 20px;
+ border: 2px solid var(--burnt-orange);
+ color: var(--burnt-orange);
+ font-size: 15px;
+ font-weight: 600;
+}
+.book button:hover {
+    background-color: var(--burnt-orange);
+    color: var(--brown-1);
+   }
+@media (max-width: 768px) {
+  .book-list {
+    padding: 150px 70px;
+  }
+}
+@media (max-width: 540px) {
+  .book-list {
+    padding: 100px 20px;
+  }
+  .book img {
+    width: 330px;
+    height: auto;
+    padding-bottom: 25px;
+  }
+}
