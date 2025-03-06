@@ -12,6 +12,7 @@ A simple bookstore app where users can borrow and return books.
 - **CSS** - Styling the layout and text positioning  
 - **JavaScript** - Handles book borrowing, returning, and UI updates 
 
+## Project Structure 
 /bookstore
 │── /images            # Book cover images
 │── index.html         # Main webpage
