@@ -43,17 +43,55 @@ const books = [
 
 const bookContainer = document.getElementById("book-list");
 
-function displayBooks() {
-  books.forEach((book) => {
-    bookContainer.innerHTML += `
-      <div class="book">
-        <img src="${book.image}" alt="${book.title}" />
-        <h2 class"book-title">${book.title}</h2>
-        <button>Borrow Book</button>
-      </div>
-    `;
+// Function to add "Unavailable" text to a specific book when clicked
+function addText(bookDiv) {
+  let text = bookDiv.querySelector(".span-text");
+
+  if (text) {
+    text.remove();
+  } else {
+    text = document.createElement("span");
+    text.textContent = "Unavailable";
+    text.classList.add("span-text");
+    bookDiv.appendChild(text);
+  }
+}
+
+function btnClicked() {
+  const buttons = document.querySelectorAll(".btn");
+
+  buttons.forEach((button) => {
+    button.addEventListener("click", () => {
+      // Get the parent .book div of the clicked button
+      const bookDiv = button.closest(".book");
+      // Select the image inside this specific book div
+      const image = bookDiv.querySelector(".image");
+      // Apply blur only to this image
+      if (button.textContent === "Borrow Book") {
+        image.style.filter = "blur(5px)";
+        button.textContent = "Return Book";
+      } else {
+        image.style.filter = "none";
+        button.textContent = "Borrow Book";
+      }
+      
+      addText(bookDiv);
+    });
   });
 }
 
-displayBooks();
+function displayBooks() {
+  bookContainer.innerHTML = "";
+  books.forEach((book) => {
+    bookContainer.innerHTML += `
+        <div class="book">
+          <img src="${book.image}" alt="${book.title}" class="image"/>
+          <h2>${book.title}</h2>
+         <button class="btn">Borrow Book</button>
+         </div>
+         `;
+  });
+  btnClicked();
+}
 
+displayBooks();

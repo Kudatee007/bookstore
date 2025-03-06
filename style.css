@@ -44,7 +44,20 @@ body {
   padding: 150px;
 }
 .book {
+  position: relative;
   text-align: center;
+}
+.span-text {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /* background: rgba(0, 0, 0, 0.7); */
+  background-color: var(--brown-1);
+  color: white;
+  padding: 5px 10px;
+  font-size: 16px;
+  border-radius: 5px;
 }
 .book img {
   width: 100%;
